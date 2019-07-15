@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+#  thymeleaf:
+#    cache: false
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+devtools:
+  restart:
+    enabled: true
+    additional-paths: src/main/java
+
+dubbo:
+  application:
+    name: demo-consumer
+
+  registry:
+
+    address: zookeeper://127.0.0.1:2181
+
+  monitor:
+    protocol: registry
+
+  consumer:
+    check: false
+#    filter: metrics
+
